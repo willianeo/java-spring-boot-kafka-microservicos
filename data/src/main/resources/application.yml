@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: data
+
+  # database configs
+  datasource:
+    url: jdbc:postgresql://localhost:5432/car_post_analytics
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  # jpa configs
+  jpa:
+    hibernate:
+      # Hibernate ddl auto (none, create, create-drop, validate, update)
+      ddl-auto: create
+    format_sql: true
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  # kafka configs
+  kafka:
+    bootstrap-servers: localhost:9092
+# port
+server:
+  port: 8081
+
